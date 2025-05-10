@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Features from './components/Features'
+import Curriculum from './components/Curriculum'
+import CoursePreview from './components/CoursePreview'
+import Instructor from './components/Instructor'
+import SuccessStories from './components/SuccessStories'
+import Testimonials from './components/Testimonials'
+import ComparisonTable from './components/ComparisonTable'
+import Pricing from './components/Pricing'
+import CountdownTimer from './components/CountdownTimer'
+import FAQ from './components/FAQ'
+import Newsletter from './components/Newsletter'
+import CTA from './components/CTA'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Set countdown date to 7 days from now
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 7);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <Features />
+        <Curriculum />
+        <CoursePreview />
+        <CountdownTimer
+          targetDate={targetDate}
+          title="Special Launch Discount Ends Soon"
+          subtitle="Enroll now to save 50% off the regular price!"
+        />
+        <Instructor />
+        <SuccessStories />
+        <Testimonials />
+        <ComparisonTable />
+        <Pricing />
+        <Newsletter />
+        <FAQ />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
