@@ -45,4 +45,12 @@
   .section {
     @apply py-16 md:py-24;
   }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl;
+  }
+
+  .heading-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-secondary-600;
+  }
 }
